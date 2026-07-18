@@ -15,7 +15,6 @@
         --accent-2: #4f8cff;
         --border: rgba(255, 255, 255, 0.1);
       }
-
       * {
         box-sizing: border-box;
       }
@@ -362,6 +361,49 @@
         font-size: 1rem;
       }
 
+      .gallery-modal .nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 38px;
+        height: 38px;
+        border: none;
+        background: rgba(255, 255, 255, 0.12);
+        color: white;
+        border-radius: 999px;
+        cursor: pointer;
+        font-size: 1.1rem;
+        z-index: 1;
+      }
+
+      .gallery-modal .prev-btn {
+        left: 12px;
+      }
+
+      .gallery-modal .next-btn {
+        right: 12px;
+      }
+
+      .gallery-modal .carousel-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+      }
+
+      .gallery-modal .carousel-caption {
+        color: #f4f7fb;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        text-align: center;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.06);
+        width: fit-content;
+      }
+
       .gallery-modal img {
         width: 100%;
         height: auto;
@@ -489,7 +531,7 @@
                     <div class="placeholder-image">
                       <img src="Images/Locks/Assure 2/YRD410.png" alt="YRD410">
                     </div>
-                    <a class="variant-link" href="#">Ver manual</a>
+                    <a class="variant-link" href="Manuales/Assure 2/YRD/YRD410-420.pdf">Ver manual</a>
                   </div>
                   <div class="variant-card">
                     <div class="variant-info">
@@ -499,7 +541,7 @@
                     <div class="placeholder-image">
                       <img src="Images/Locks/Assure 2/YRD420.png" alt="YRD420">
                     </div>
-                    <a class="variant-link" href="#">Ver manual</a>
+                    <a class="variant-link" href="Manuales/Assure 2/YRD/YRD410-420.pdf">Ver manual</a>
                   </div>
                   <div class="variant-card">
                     <div class="variant-info">
@@ -509,7 +551,7 @@
                     <div class="placeholder-image">
                       <img src="Images/Locks/Assure 2/YRD430.png" alt="YRD430">
                     </div>
-                    <a class="variant-link" href="#">Ver manual</a>
+                    <a class="variant-link" href="Manuales/Assure 2/YRD/YRD430-450.pdf">Ver manual</a>
                   </div>
                   <div class="variant-card">
                     <div class="variant-info">
@@ -519,7 +561,7 @@
                     <div class="placeholder-image">
                       <img src="Images/Locks/Assure 2/YRD450.png" alt="YRD450">
                     </div>
-                    <a class="variant-link" href="#">Ver manual</a>
+                    <a class="variant-link" href="Manuales/Assure 2/YRD/YRD430-450.pdf">Ver manual</a>
                   </div>
                 </div>
               </div>
@@ -537,7 +579,7 @@
                     <div class="placeholder-image">
                       <img src="Images/Locks/Assure 2/YRD410-F.png" alt="YRD410-F">
                     </div>
-                    <a class="variant-link" href="#">Ver manual</a>
+                    <a class="variant-link" href="Manuales/Assure 2/YRD-F/YRD410-F.pdf">Ver manual</a>
                   </div>
                   <div class="variant-card">
                     <div class="variant-info">
@@ -547,7 +589,7 @@
                     <div class="placeholder-image">
                       <img src="Images/Locks/Assure 2/YRD420-F.png" alt="YRD420-F">
                     </div>
-                    <a class="variant-link" href="#">Ver manual</a>
+                    <a class="variant-link" href="Manuales/Assure 2/YRD-F/YRD420-F.pdf">Ver manual</a>
                   </div>
                   <div class="variant-card">
                     <div class="variant-info">
@@ -557,7 +599,7 @@
                     <div class="placeholder-image">
                       <img src="Images/Locks/Assure 2/YRD430-F.png" alt="YRD430-F">
                     </div>
-                    <a class="variant-link" href="#">Ver manual</a>
+                    <a class="variant-link" href="Manuales/Assure 2/YRD-F/YRD430-F.pdf">Ver manual</a>
                   </div>
                   <div class="variant-card">
                     <div class="variant-info">
@@ -567,7 +609,7 @@
                     <div class="placeholder-image">
                       <img src="Images/Locks/Assure 2/YRD450-F.png" alt="YRD450-F">
                     </div>
-                    <a class="variant-link" href="#">Ver manual</a>
+                    <a class="variant-link" href="Manuales/Assure 2/YRD-F/YRD450-F.pdf">Ver manual</a>
                   </div>
                 </div>
               </div>
@@ -585,7 +627,7 @@
                     <div class="placeholder-image">
                       <img src="Images/Locks/Assure 2/YRD450-N.png" alt="YRD450-N">
                     </div>
-                    <a class="variant-link" href="#">Ver manual</a>
+                    <a class="variant-link" href="Manuales/Assure 2/YRD-N/YRD450-N.pdf">Ver manual</a>
                   </div>
                 </div>
               </div>
@@ -911,7 +953,12 @@
     <div class="gallery-modal" id="galleryModal" aria-hidden="true">
       <div class="modal-content">
         <button class="close-btn" id="closeGalleryBtn" type="button" aria-label="Cerrar galería">×</button>
-        <img id="galleryModalImg" src="" alt="Imagen ampliada">
+        <button class="nav-btn prev-btn" id="prevGalleryBtn" type="button" aria-label="Imagen anterior">←</button>
+        <div class="carousel-inner">
+          <img id="galleryModalImg" src="" alt="Imagen ampliada">
+          <div class="carousel-caption" id="galleryModalTitle"></div>
+        </div>
+        <button class="nav-btn next-btn" id="nextGalleryBtn" type="button" aria-label="Siguiente imagen">→</button>
       </div>
     </div>
 
@@ -975,11 +1022,44 @@
 
       const galleryModal = document.getElementById('galleryModal');
       const galleryModalImg = document.getElementById('galleryModalImg');
+      const galleryModalTitle = document.getElementById('galleryModalTitle');
       const closeGalleryBtn = document.getElementById('closeGalleryBtn');
+      const prevGalleryBtn = document.getElementById('prevGalleryBtn');
+      const nextGalleryBtn = document.getElementById('nextGalleryBtn');
       const preview = document.getElementById('imagePreview');
       const previewImg = document.getElementById('imagePreviewImg');
 
-      document.querySelectorAll('.placeholder-image').forEach((thumb) => {
+      const galleryItems = Array.from(document.querySelectorAll('.placeholder-image img')).map((img) => ({
+        src: img.src,
+        title: img.alt || ''
+      }));
+
+      let currentGalleryIndex = 0;
+
+      const updateGalleryModal = (index) => {
+        const item = galleryItems[index];
+        if (!item || !galleryModalImg || !galleryModalTitle) return;
+        galleryModalImg.src = item.src;
+        galleryModalImg.alt = item.title;
+        galleryModalTitle.textContent = item.title;
+        currentGalleryIndex = index;
+      };
+
+      const openGallery = (index) => {
+        if (!galleryModal) return;
+        const normalizedIndex = (index + galleryItems.length) % galleryItems.length;
+        updateGalleryModal(normalizedIndex);
+        galleryModal.classList.add('show');
+        galleryModal.setAttribute('aria-hidden', 'false');
+      };
+
+      const changeGalleryItem = (direction) => {
+        if (!galleryModal) return;
+        const nextIndex = (currentGalleryIndex + direction + galleryItems.length) % galleryItems.length;
+        updateGalleryModal(nextIndex);
+      };
+
+      document.querySelectorAll('.placeholder-image').forEach((thumb, index) => {
         const img = thumb.querySelector('img');
         if (!img) return;
 
@@ -1001,24 +1081,41 @@
         });
 
         thumb.addEventListener('click', () => {
-          galleryModalImg.src = img.src;
-          galleryModalImg.alt = img.alt;
-          galleryModal.classList.add('show');
-          galleryModal.setAttribute('aria-hidden', 'false');
+          openGallery(index);
         });
       });
 
       const closeGallery = () => {
+        if (!galleryModal) return;
         galleryModal.classList.remove('show');
         galleryModal.setAttribute('aria-hidden', 'true');
       };
 
-      closeGalleryBtn.addEventListener('click', closeGallery);
-      galleryModal.addEventListener('click', (event) => {
-        if (event.target === galleryModal) {
-          closeGallery();
-        }
-      });
+      if (prevGalleryBtn) {
+        prevGalleryBtn.addEventListener('click', (event) => {
+          event.stopPropagation();
+          changeGalleryItem(-1);
+        });
+      }
+
+      if (nextGalleryBtn) {
+        nextGalleryBtn.addEventListener('click', (event) => {
+          event.stopPropagation();
+          changeGalleryItem(1);
+        });
+      }
+
+      if (closeGalleryBtn) {
+        closeGalleryBtn.addEventListener('click', closeGallery);
+      }
+
+      if (galleryModal) {
+        galleryModal.addEventListener('click', (event) => {
+          if (event.target === galleryModal) {
+            closeGallery();
+          }
+        });
+      }
     </script>
   </body>
 </html>
