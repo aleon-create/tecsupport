@@ -1099,7 +1099,6 @@
 
           const isOpen = submenu.classList.contains('open');
 
-          // Solo cerrar submenús hermanos (con el mismo padre)
           const parent = submenu.parentElement;
           if (parent) {
             parent.querySelectorAll('.submenu.open').forEach((openSubmenu) => {
